@@ -62,7 +62,7 @@ def start_Quize():
         timerResponse = QuizeTimer()
 
         if timerResponse:
-            print()
+            print(question["question"])
             engine.say(question["question"])
             engine.runAndWait()
             answer = input("ENTER ANSWER: ")
