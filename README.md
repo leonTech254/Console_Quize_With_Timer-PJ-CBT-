@@ -7,6 +7,16 @@ Navigate to MultQuestion
 </pre>
 </li>
 <li>
+Install the requierments
+<pre>
+<code>
+python3 requiremen.txt
+</code>
+</pre>
+
+</li>
+
+<li>
 <pre>
 <code>
 python3 main.py
