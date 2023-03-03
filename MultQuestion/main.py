@@ -1,6 +1,10 @@
 import time
 from datetime import datetime, timedelta
 from questions import Questions
+import pyttsx3
+
+engine = pyttsx3.init()
+engine.setProperty('rate', 150)
 
 
 class Management:
@@ -58,7 +62,9 @@ def start_Quize():
         timerResponse = QuizeTimer()
 
         if timerResponse:
-            print(question["question"])
+            print()
+            engine.say(question["question"])
+            engine.runAndWait()
             answer = input("ENTER ANSWER: ")
             if answer == question["answer"]:
                 Management.score += 1
