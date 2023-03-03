@@ -17,6 +17,7 @@ python3 requiremen.txt
 </li>
 
 <li>
+Run the script
 <pre>
 <code>
 python3 main.py
