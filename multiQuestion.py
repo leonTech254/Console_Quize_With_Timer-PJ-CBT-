@@ -32,6 +32,8 @@ mult_question = [
 ]
 
 # run_test takes questions as input. Note it is not the same question array as before
+
+
 def run_test(questions):
     score = 0
     for each_question in questions:
@@ -53,7 +55,7 @@ def run_test(questions):
         print("\nYour Grade: B+")
     else:
         print("\nYour Grade: A")
-#leon area of concentration
+# leon area of concentration
 
 
 # pass our questions array into run_test function
@@ -73,7 +75,7 @@ if num == token_number:
 else:
     print("You are not allowed to take this test")
     exit()
-    
+
 
 current_time = now.strftime("%H:%M:%S %p")
 print("You started the CBT at ", current_time, "\n\n")
