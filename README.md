@@ -30,3 +30,8 @@ class Management:
 </code>
 </pre>
 </li>
+
+## DEVELOPERS
+
+<li>Martin Leon: martinleontech23@gmail.com</li>
+<li>Valentine W.:wanguivalentine19@gmail.com</li>
