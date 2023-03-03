@@ -2,7 +2,7 @@
 class Questions:
     question_list = [
         {
-            "questions": "Where is Lambogini made? (a) Germany\n (b) Italy\n (c) Nigeria\n\n",
+            "question": "Where is Lambogini made? (a) Germany\n (b) Italy\n (c) Nigeria\n\n",
             "answer": "b"
         },
         {
@@ -43,3 +43,17 @@ class Questions:
         }
 
     ]
+
+    def grades(score):
+        if score == 0:
+            return "\nYour Grade: F"
+        elif (score >= 1) and (score <= 4):
+            return "\nYour Grade: D"
+        elif (score >= 5) and (score <= 6):
+            return "\nYour Grade: C"
+        elif (score >= 6) and (score < 8):
+            return "\nYour Grade: B"
+        elif (score > 8) and (score <= 9):
+            return "\nYour Grade: B+"
+        else:
+            return "\nYour Grade: A"
