@@ -5,7 +5,7 @@ from questions import Questions
 
 class Management:
     score = 0
-    QuizeDuaration = 15
+    QuizeDuaration = 15  # time in seconds
     Started = False
     Start_time = 0
     Name = ""
