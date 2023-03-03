@@ -2,14 +2,14 @@ import time
 from datetime import datetime, timedelta
 from questions import Questions
 
-quize_token = 1224
-
 
 class Management:
     score = 0
     QuizeDuaration = 1
     Started = False
     Start_time = 0
+    Name = ""
+    quize_token = "1224"
 
 
 def user_credentions():
@@ -23,28 +23,39 @@ def user_credentions():
         print("\nall Field required")
         return "failed"
     else:
-        if quize_token == token_number_user:
+
+        Management.Name = name
+        if Management.quize_token == token_number_user:
             print("Token number Verified")
             return "success"
+        else:
+            print("Token Failed")
 
 
 def QuizeTimer():
+
     if Management.Started:
         duration = timedelta(seconds=Management.QuizeDuaration)
         current_time = datetime.now()
         time_elapsed = current_time-Management.Start_time
+        print(current_time)
+
         if time_elapsed > duration:
+
             return False
         else:
+
             return True
     else:
         Management.Start_time = datetime.now()
+        Management.Started = True
         return True
 
 
 def start_Quize():
     for question in Questions.question_list:
         timerResponse = QuizeTimer()
+
         if timerResponse:
             print(question["question"])
             answer = input("ENTER ANSWER: ")
@@ -56,8 +67,19 @@ def start_Quize():
 
 
 def UserResults():
-    print(f"Your score is: {Management.score}")
-    Questions.grades(score=Management.score)
+    grades = Questions.grades(score=Management.score)
+    Results = f"""
+Name:{Management.Name}
+Your score is: {Management.score}
+Grades: {grades}
+"""
+
+    print(Results)
 
 
-start_Quize()
+if __name__ == "__main__":
+    QuizeTimer()
+    response = user_credentions()
+    if response:
+        start_Quize()
+        UserResults()
