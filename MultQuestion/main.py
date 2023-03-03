@@ -5,7 +5,7 @@ from questions import Questions
 
 class Management:
     score = 0
-    QuizeDuaration = 1
+    QuizeDuaration = 15
     Started = False
     Start_time = 0
     Name = ""
@@ -38,8 +38,9 @@ def QuizeTimer():
         duration = timedelta(seconds=Management.QuizeDuaration)
         current_time = datetime.now()
         time_elapsed = current_time-Management.Start_time
-        print(current_time)
-
+        seconds_rem = int(duration.total_seconds()) - \
+            int(time_elapsed.total_seconds())
+        print(f"TIME REMEINING: {seconds_rem}seconds \n")
         if time_elapsed > duration:
 
             return False
